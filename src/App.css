@@ -1,9 +1,14 @@
 .App {
   text-align: center;
+  background: white;
+  margin: 0 20px;
 }
 
+body {
+  background: white;
+}
 .App-logo {
-  height: 40vmin;
+  height: 100px;
   pointer-events: none;
 }
 
@@ -14,14 +19,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(10px + 0.2vmin);
+  color: black;
 }
 
 .App-link {
@@ -36,3 +40,622 @@
     transform: rotate(360deg);
   }
 }
+
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.containerx {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-180deg); opacity: 0; }
+  to { transform: rotate(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fancy-grid {
+  padding: 50px 0;
+}
+
+.grid-item {
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.grid-item:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.content-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.animated-title {
+  opacity: 0;
+  animation: rotateIn 1s forwards;
+}
+
+.animated-text {
+  opacity: 0;
+  animation: slideInLeft 1s forwards 0.5s;
+}
+
+.animated-button {
+  opacity: 0;
+  animation: scaleIn 0.5s forwards 1s;
+}
+
+.scroll-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.animated-bg {
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  animation: gradientBG 15s ease infinite;
+  transform: rotate(-45deg);
+}
+
+.parallax-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -50%; /* Start the image higher up */
+  left: 0;
+  width: 100%;
+  height: 150%; /* Make the image taller */
+  background-image: url('https://source.unsplash.com/random/1600x900?landscape');
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.interactive-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mouse-follower {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  z-index: 1000;
+}
+
+.animation-playground {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-element {
+  width: 20px;
+  height: 20px;
+  background-color: #ff9a9e;
+  position: absolute;
+  border-radius: 50%;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 50px 0;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* GPU-intensive styles */
+.grid-item, .animated-title, .animated-text, .animated-button, .parallax-bg, .mouse-follower, .animated-element {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translateZ(0);
+}
+
+/* Add more responsive styles as needed */
+@media (max-width: 960px) {
+  .banner {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 30vh;
+  }
+}
+
+
+/* src/styles/PageLayout.css */
+.page-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-180deg); opacity: 0; }
+  to { transform: rotate(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatAnimation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.banner {
+  height: 100vh;
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fancy-grid {
+  padding: 50px 0;
+}
+
+.grid-item {
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.grid-item:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.content-section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.animated-title {
+  opacity: 0;
+  animation: rotateIn 1s forwards;
+}
+
+.animated-text {
+  opacity: 0;
+  animation: slideInLeft 1s forwards 0.5s;
+}
+
+.animated-button {
+  opacity: 0;
+  animation: scaleIn 0.5s forwards 1s;
+}
+
+.scroll-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.animated-bg {
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  animation: gradientBG 15s ease infinite;
+  transform: rotate(-45deg);
+}
+
+.parallax-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url('https://source.unsplash.com/random/1600x900?landscape');
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.interactive-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mouse-follower {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  z-index: 1000;
+}
+
+.animation-playground {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-element {
+  width: 20px;
+  height: 20px;
+  background-color: #ff9a9e;
+  position: absolute;
+  border-radius: 50%;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 50px 0;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* GPU-intensive styles */
+.grid-item, .animated-title, .animated-text, .animated-button, .parallax-bg, .mouse-follower, .animated-element {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translateZ(0);
+}
+
+/* Add more responsive styles as needed */
+@media (max-width: 960px) {
+  .banner {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    height: 30vh;
+  }
+}
+
+
+
+
+.landing-page {
+  background: linear-gradient(135deg, #1a237e, #283593, #303f9f, #3949ab, #3f51b5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-section {
+  position: relative;
+}
+
+.parallax-bg {
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+}
+
+.animated-title {
+  animation: fadeInUp 1s ease-out, glow 2s ease-in-out infinite alternate;
+}
+
+.animated-subtitle {
+  animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+}
+
+.features-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-text {
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out 1s backwards, pulse 2s infinite;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
