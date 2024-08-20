@@ -8,8 +8,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete, MoreVert, FilterList, Search, Add } from '@mui/icons-material';
 import { styled, alpha } from '@mui/material/styles';
-
-const API_URL = 'http://localhost:3001/api';
+import '../styles/TablePage.css'; // Import the CSS file
+const API_URL = 'https://be-poc-capacitor-7c7b6a2a8876.herokuapp.com/api';
 
 const departments = ['Engineering', 'Marketing', 'Sales', 'HR', 'Finance', 'Operations'];
 const roles = ['Manager', 'Senior', 'Junior', 'Intern', 'Director', 'VP'];
@@ -371,9 +371,9 @@ const TablePage = () => {
                         {employees.map((row) => {
                             const isItemSelected = selected.indexOf(row.id) !== -1;
                             return (
-                                <StyledTableRow
+                                <TableRow
                                     hover
-                                    onClick={() => handleClick(row.id)}
+                                    onClick={(event) => handleClick(event, row.id)}
                                     role="checkbox"
                                     aria-checked={isItemSelected}
                                     tabIndex={-1}
@@ -383,24 +383,24 @@ const TablePage = () => {
                                     <TableCell padding="checkbox">
                                         <Checkbox checked={isItemSelected} sx={{ color: 'white' }} />
                                     </TableCell>
-                                    <TableCell>{row.id}</TableCell>
-                                    <TableCell>{row.name}</TableCell>
-                                    <TableCell>{row.role}</TableCell>
-                                    <TableCell>{row.department}</TableCell>
-                                    <TableCell>${row.salary.toLocaleString()}</TableCell>
-                                    <TableCell>
+                                    <TableCell data-label="ID">{row.id}</TableCell>
+                                    <TableCell data-label="Name">{row.name}</TableCell>
+                                    <TableCell data-label="Role">{row.role}</TableCell>
+                                    <TableCell data-label="Department">{row.department}</TableCell>
+                                    <TableCell data-label="Salary">${row.salary.toLocaleString()}</TableCell>
+                                    <TableCell data-label="Performance">
                                         <Tooltip title={`${(row.performance * 100).toFixed(1)}%`}>
                                             <LinearProgress variant="determinate" value={row.performance * 100} />
                                         </Tooltip>
                                     </TableCell>
-                                    <TableCell>{row.tasks}</TableCell>
-                                    <TableCell>
+                                    <TableCell data-label="Tasks">{row.tasks}</TableCell>
+                                    <TableCell data-label="Status">
                                         <Chip
                                             label={row.status}
                                             color={row.status === 'Active' ? 'success' : row.status === 'On Leave' ? 'warning' : 'error'}
                                         />
                                     </TableCell>
-                                    <TableCell>
+                                    <TableCell data-label="Actions">
                                         <IconButton size="small" sx={{ color: 'white' }} onClick={() => handleOpenDialog(row)}><Edit /></IconButton>
                                         <IconButton size="small" sx={{ color: 'white' }} onClick={() => handleDeleteEmployee(row.id)}><Delete /></IconButton>
                                         <IconButton size="small" onClick={handleMenuOpen} sx={{ color: 'white' }}><MoreVert /></IconButton>
@@ -414,7 +414,7 @@ const TablePage = () => {
                                             <MenuItem onClick={handleMenuClose}>Generate Report</MenuItem>
                                         </Menu>
                                     </TableCell>
-                                </StyledTableRow>
+                                </TableRow>
                             );
                         })}
                     </TableBody>

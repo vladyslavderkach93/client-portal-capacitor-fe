@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
+import '../styles/ChartsPage.css'; // Import the CSS file
+
 
 const ChartsPage = () => {
     const [data, setData] = useState([]);
@@ -278,28 +280,28 @@ const ChartsPage = () => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="charts-page">
             <h1>Advanced Interactive D3 Charts</h1>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
+            <div className="charts-container">
+                <div className="chart-wrapper">
                     <h2>Scatter Plot with Brush</h2>
-                    <svg ref={scatterRef} width={600} height={400}></svg>
+                    <svg ref={scatterRef} viewBox="0 0 600 400"></svg>
                 </div>
-                <div>
+                <div className="chart-wrapper">
                     <h2>Line Chart</h2>
-                    <svg ref={lineRef} width={600} height={400}></svg>
+                    <svg ref={lineRef} viewBox="0 0 600 400"></svg>
                 </div>
-                <div>
+                <div className="chart-wrapper">
                     <h2>Pie Chart of Selected Data</h2>
-                    <svg ref={pieRef} width={400} height={400}></svg>
+                    <svg ref={pieRef} viewBox="0 0 400 400"></svg>
                 </div>
-                <div>
+                <div className="chart-wrapper">
                     <h2>Bar Chart</h2>
-                    <svg ref={barRef} width={600} height={400}></svg>
+                    <svg ref={barRef} viewBox="0 0 600 400"></svg>
                 </div>
-                <div>
+                <div className="chart-wrapper">
                     <h2>Stacked Area Chart</h2>
-                    <svg ref={areaRef} width={600} height={400}></svg>
+                    <svg ref={areaRef} viewBox="0 0 600 400"></svg>
                 </div>
                 <div>
                     <h2>Selected Data Info</h2>
@@ -307,24 +309,24 @@ const ChartsPage = () => {
                     <p>Categories: {[...new Set(brushedData.map(d => d.category))].join(', ')}</p>
                 </div>
             </div>
-            <div style={{ marginTop: '20px' }}>
+            <div className="data-table-container">
                 <h2>Data Table</h2>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <table className="data-table">
                     <thead>
                     <tr>
-                        <th style={tableHeaderStyle}>Name</th>
-                        <th style={tableHeaderStyle}>Value</th>
-                        <th style={tableHeaderStyle}>Category</th>
-                        <th style={tableHeaderStyle}>Date</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Category</th>
+                        <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
                     {data.slice(0, 10).map((d, i) => (
                         <tr key={i}>
-                            <td style={tableCellStyle}>{d.name}</td>
-                            <td style={tableCellStyle}>{d.value}</td>
-                            <td style={tableCellStyle}>{d.category}</td>
-                            <td style={tableCellStyle}>{d.date.toLocaleDateString()}</td>
+                            <td>{d.name}</td>
+                            <td>{d.value}</td>
+                            <td>{d.category}</td>
+                            <td>{d.date.toLocaleDateString()}</td>
                         </tr>
                     ))}
                     </tbody>

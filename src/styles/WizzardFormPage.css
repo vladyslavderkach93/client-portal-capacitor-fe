@@ -1,0 +1,162 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Mobile-first styles */
+.wizard-form-container {
+    width: 100%;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.wizard-form-paper {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Input specific styles */
+.wizard-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.MuiFormControl-root,
+.MuiTextField-root,
+.MuiSelect-root,
+.MuiAutocomplete-root {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.MuiInputBase-root,
+.MuiOutlinedInput-root,
+.MuiFilledInput-root,
+.MuiInput-root {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.MuiInputBase-input,
+.MuiOutlinedInput-input,
+.MuiFilledInput-input,
+.MuiInput-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+}
+
+/* Ensure select dropdowns don't overflow */
+.MuiSelect-select {
+    padding-right: 24px !important; /* Space for the dropdown icon */
+}
+
+/* Adjust autocomplete dropdown */
+.MuiAutocomplete-popper {
+    width: calc(100% - 20px) !important;
+    left: 10px !important;
+}
+
+/* Adjust datepicker */
+.MuiPickersPopper-root {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-width: 90vw !important;
+}
+
+/* Other form elements */
+.wizard-form-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.wizard-form-button {
+    width: 100%;
+}
+
+.wizard-form-card,
+.wizard-form-accordion {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Stepper adjustments */
+.wizard-form-stepper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.MuiStepIcon-root,
+.MuiStepLabel-label {
+    font-size: 0.7rem;
+}
+
+.MuiStepConnector-line {
+    min-width: 20px;
+}
+
+/* Tablet styles */
+@media (min-width: 600px) {
+    .wizard-form-container {
+        padding: 20px;
+    }
+
+    .wizard-form-paper {
+        padding: 20px;
+    }
+
+    .wizard-form-button-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .wizard-form-button {
+        width: auto;
+    }
+
+    .wizard-form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Reset Material-UI component sizes */
+    .MuiStepIcon-root,
+    .MuiStepLabel-label {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 960px) {
+    .wizard-form-container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .wizard-form-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 481px) {
+    .wizard-form-paper {
+        max-width: 300px;
+    }
+}

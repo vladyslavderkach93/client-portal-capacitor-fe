@@ -249,10 +249,6 @@
 .layer-2 { background-image: url('https://via.placeholder.com/500x300/00ff00/ffffff'); animation-duration: 15s; }
 .layer-3 { background-image: url('https://via.placeholder.com/500x300/0000ff/ffffff'); animation-duration: 20s; }
 
-@keyframes parallax-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
 
 /* 10. CPU Counter */
 .cpu-counter {

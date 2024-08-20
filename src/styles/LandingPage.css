@@ -1,11 +1,5 @@
 /* src/styles/LandingPage.css */
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 .loading-screen {
     position: fixed;
     top: 0;
@@ -88,7 +82,6 @@
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 4rem 0;
-    height: 70vh;
 }
 
 .section-title {
@@ -239,8 +232,6 @@
     width: 200%;
     height: 200%;
     background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    animation: gradientMove 15s ease infinite;
-    transform: rotate(-45deg);
 }
 
 @keyframes gradientMove {
@@ -455,7 +446,6 @@
             linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent),
             linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
     background-size: 60px 60px;
-    animation: stripeMove 3s linear infinite;
 }
 
 @keyframes gradientMove {
@@ -467,15 +457,6 @@
     }
     100% {
         transform: rotate(360deg);
-    }
-}
-
-@keyframes stripeMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 60px 60px;
     }
 }
 
@@ -507,6 +488,10 @@
 .cta-text {
     color: #1a1a1a;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.animated-title {
+    color: #fff;
 }
 
 .geometric-figures {

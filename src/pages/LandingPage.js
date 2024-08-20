@@ -180,16 +180,6 @@ const LandingPage = () => {
 
                 {renderSection("About Us", "We are a team of passionate individuals committed to pushing the boundaries of what's possible in web development. Our goal is to create immersive and unforgettable online experiences.", ref3, inView3)}
 
-                <div className="animation-playground" ref={ref5}>
-                    {Array.from({ length: 100 }, (_, i) => (
-                        <div key={i} className="animated-element" style={{
-                            animationDelay: `${i * 0.1}s`,
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                        }}></div>
-                    ))}
-                </div>
-
                 <StyledSection className="cta-section image-bg-3">
                     <Typography variant="h2" className="section-title">
                         Get Started Today

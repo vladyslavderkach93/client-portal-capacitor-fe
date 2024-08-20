@@ -9,6 +9,7 @@ import {
     Card, CardContent, Accordion, AccordionSummary, AccordionDetails
 } from '@mui/material';
 import {CloudUpload, Delete, ExpandMore, AutoFixHigh} from '@mui/icons-material';
+import '../styles/WizzardFormPage.css'; // Import the CSS file
 
 const skills = ['React', 'JavaScript', 'TypeScript', 'Node.js', 'Python', 'Java', 'C++', 'SQL', 'GraphQL', 'Docker'];
 
@@ -508,40 +509,40 @@ const WizardFormPage = () => {
     };
 
     return (
-        <Fragment>
-            <Container maxWidth="lg">
-                <Paper elevation={3} style={{ padding: '20px', marginTop: '20px' }}>
-                    <FormProvider {...methods}>
-                        <form onSubmit={methods.handleSubmit(handleSubmit)}>
-                            <Stepper activeStep={activeStep} alternativeLabel style={{ marginBottom: '20px' }}>
-                                {steps.map((label) => (
-                                    <Step key={label}>
-                                        <StepLabel>{label}</StepLabel>
-                                    </Step>
-                                ))}
-                            </Stepper>
+        <div className="wizard-form-container">
+            <Paper className="wizard-form-paper" elevation={3}>
+                <FormProvider {...methods}>
+                    <form onSubmit={methods.handleSubmit(handleSubmit)}>
+                        <Stepper className="wizard-form-stepper" activeStep={activeStep} alternativeLabel>
+                            {steps.map((label) => (
+                                <Step key={label}>
+                                    <StepLabel>{label}</StepLabel>
+                                </Step>
+                            ))}
+                        </Stepper>
+                        <div className="wizard-form-step">
                             {renderStepContent(activeStep)}
-                            <Box mt={3} display="flex" justifyContent="space-between">
-                                {activeStep > 0 && (
-                                    <Button onClick={handleBack} variant="outlined">
-                                        Back
-                                    </Button>
-                                )}
-                                {activeStep < steps.length - 1 ? (
-                                    <Button variant="contained" color="primary" onClick={handleNext}>
-                                        Next
-                                    </Button>
-                                ) : (
-                                    <Button type="submit" variant="contained" color="primary">
-                                        Submit
-                                    </Button>
-                                )}
-                            </Box>
-                        </form>
-                    </FormProvider>
-                </Paper>
-            </Container>
-        </Fragment>
+                        </div>
+                        <div className="wizard-form-button-container">
+                            {activeStep > 0 && (
+                                <Button className="wizard-form-button" onClick={handleBack} variant="outlined">
+                                    Back
+                                </Button>
+                            )}
+                            {activeStep < steps.length - 1 ? (
+                                <Button className="wizard-form-button" variant="contained" color="primary" onClick={handleNext}>
+                                    Next
+                                </Button>
+                            ) : (
+                                <Button className="wizard-form-button" type="submit" variant="contained" color="primary">
+                                    Submit
+                                </Button>
+                            )}
+                        </div>
+                    </form>
+                </FormProvider>
+            </Paper>
+        </div>
     );
 };
 

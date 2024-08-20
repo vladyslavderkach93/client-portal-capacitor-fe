@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pocOwmCapacitor</string>
+    <string name="title_activity_main">pocOwmCapacitor</string>
+    <string name="package_name">poc.owm.capacitor</string>
+    <string name="custom_url_scheme">poc.owm.capacitor</string>
+</resources>
